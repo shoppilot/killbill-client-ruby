@@ -1,6 +1,6 @@
 module KillBillClient
   module Model
-    class Usage < SubscriptionUsageRecordAttributes
+    class UsageRecord < SubscriptionUsageRecordAttributes
 
       has_many :audit_logs, KillBillClient::Model::AuditLog
 

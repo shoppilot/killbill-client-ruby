@@ -56,7 +56,7 @@ module KillBillClient
 
 
         def create(user = nil, reason = nil, comment = nil, options = {})
-          created_account = self.class.post KILLBILL_API_ACCOUNTS_PREFIX,
+          created_account = post KILLBILL_API_ACCOUNTS_PREFIX,
                                           to_json,
                                           {},
                                           {

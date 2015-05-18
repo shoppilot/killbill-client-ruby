@@ -53,10 +53,10 @@ module KillBillClient
               },
               options
         end
-      end
 
-      def create(user = nil, reason = nil, comment = nil, options = {})
-        created_account = self.class.post KILLBILL_API_ACCOUNTS_PREFIX,
+
+        def create(user = nil, reason = nil, comment = nil, options = {})
+          created_account = self.class.post KILLBILL_API_ACCOUNTS_PREFIX,
                                           to_json,
                                           {},
                                           {
@@ -64,7 +64,8 @@ module KillBillClient
                                               :reason  => reason,
                                               :comment => comment,
                                           }.merge(options)
-        created_account.refresh(options)
+          created_account.refresh(options)
+        end
       end
 
       def update(user = nil, reason = nil, comment = nil, options = {})
